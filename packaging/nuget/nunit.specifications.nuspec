@@ -11,7 +11,7 @@
     <description>A context/specification library for use with the NUnit testing framework.</description>
     <tags>bdd tdd testing</tags>
     <dependencies>
-      <dependency id="NUGet" version="[2.5,3.0)" />
+      <dependency id="NUnit" version="[2.5,3.0)" />
     </dependencies>
   </metadata>
   <files>
