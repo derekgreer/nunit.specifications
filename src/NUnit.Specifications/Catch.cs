@@ -4,7 +4,7 @@ namespace NUnit.Specifications
 {
 	public static class Catch
 	{
-		public static Exception Exception(Func<Exception> action)
+		public static Exception Exception(Action action)
 		{
 			Exception exception = null;
 
