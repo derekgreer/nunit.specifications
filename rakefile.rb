@@ -42,7 +42,7 @@ end
 
 task :package do
 	mkdir_p "#{ARTIFACTS_PATH}"
-	rm Dir.glob("#{ARTIFACTS_PATH}/*.nupkg")
+	rm_rf Dir.glob("#{ARTIFACTS_PATH}/*.nupkg")
 	FileList["packaging/nuget/*.nuspec"].each do |spec|
 		sh "#{nuget} pack #{spec} -o #{ARTIFACTS_PATH} -Version #{BUILD_VERSION} -Symbols -BasePath ."
 	end

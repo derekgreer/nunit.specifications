@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Text;
-using Shouldly;
+using Should;
 
 namespace NUnit.Specifications.Specs
 {
@@ -13,7 +13,7 @@ namespace NUnit.Specifications.Specs
 
 			Because of = () => _exception = Catch.Exception(() => { throw new Exception("oh nos!"); });
 
-			It should_catch_the_exception = () => _exception.ShouldNotBe(null);
+			It should_catch_the_exception = () => _exception.ShouldNotBeNull();
 		}
 
 		[Component]
@@ -23,7 +23,7 @@ namespace NUnit.Specifications.Specs
 
 			Because of = () => _exception = Catch.Exception(() => new StringBuilder("nothing wrong here"));
 
-			It should_catch_the_exception = () => _exception.ShouldBe(null);
+			It should_catch_the_exception = () => _exception.ShouldBeNull();
 		}
 	}
 }

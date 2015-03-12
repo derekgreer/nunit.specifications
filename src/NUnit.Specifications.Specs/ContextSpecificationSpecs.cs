@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Linq;
-using Shouldly;
+using Should;
 
 namespace NUnit.Specifications.Specs
 {
@@ -15,11 +15,11 @@ namespace NUnit.Specifications.Specs
 
 			Because of = () => _executionStack.Push("because");
 
-			It should_execute_the_establish_delegate_successfully = () => _executionStack.ToArray().Last().ShouldBe("context");
+			It should_execute_the_establish_delegate_successfully = () => _executionStack.ToArray().Last().ShouldEqual("context");
 
-			It should_execute_the_because_delegate_successfully = () => _executionStack.ToArray().First().ShouldBe("because");
+			It should_execute_the_because_delegate_successfully = () => _executionStack.ToArray().First().ShouldEqual("because");
 
-			It should_execute_the_it_delegate_successfully = () => true.ShouldBe(true);
+			It should_execute_the_it_delegate_successfully = () => true.ShouldBeTrue();
 		}
 	}
 }

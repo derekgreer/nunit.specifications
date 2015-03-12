@@ -1,5 +1,5 @@
 ﻿using NUnit.Framework;
-using Shouldly;
+using Should;
 
 namespace NUnit.Specifications.Specs
 {
@@ -9,7 +9,7 @@ namespace NUnit.Specifications.Specs
 		[Category("component")]
 		public class when_running_with_tddnet : ContextSpecification
 		{
-			It should_run_successfully = () => true.ShouldBe(true);
+			It should_run_successfully = () => true.ShouldBeTrue();
 		} 
 	}
 }

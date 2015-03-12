@@ -18,6 +18,7 @@ namespace NUnit.Specifications
 	[TestFixture]
 	public abstract class ContextSpecification
 	{
+		protected Exception Exception;
 		public static dynamic Context { get; protected set; }
 
 		public delegate void Because();
@@ -76,7 +77,7 @@ namespace NUnit.Specifications
 				Delegate establish = null;
 
 				if (establishFieldInfo != null) establish = establishFieldInfo.GetValue(this) as Delegate;
-				if (establish != null) establish.DynamicInvoke(null);
+				if (establish != null) Exception = Catch.Exception(() => establish.DynamicInvoke(null));
 			}
 		}
 
@@ -91,7 +92,7 @@ namespace NUnit.Specifications
 			Delegate because = null;
 
 			if (becauseFieldInfo != null) because = becauseFieldInfo.GetValue(this) as Delegate;
-			if (because != null) because.DynamicInvoke(null);
+			if (because != null) Exception = Catch.Exception(() => because.DynamicInvoke(null));
 		}
 
 		void InvokeCleanup()
@@ -121,6 +122,7 @@ namespace NUnit.Specifications
 
 			var category = (CategoryAttribute) t.GetCustomAttributes(typeof (CategoryAttribute), true).FirstOrDefault();
 			string categoryName = null;
+
 			if (category != null)
 				categoryName = category.Name;
 
@@ -128,14 +130,18 @@ namespace NUnit.Specifications
 				t.GetFields(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.FlattenHierarchy)
 					.Where(x => x.FieldType.Name.Equals("It"));
 
-			return
-				itFieldInfos.Select(
-					fieldInfo => new TestCaseData(fieldInfo.GetValue(this)).SetName(fieldInfo.Name).SetCategory(categoryName));
+			return itFieldInfos
+				.Select(fieldInfo => new TestCaseData(fieldInfo.GetValue(this))
+					.SetName(fieldInfo.Name)
+					.SetCategory(categoryName));
 		}
 
 		[Test, TestCaseSource("GetObservations")]
 		public void Observation(It observation)
 		{
+			if (Exception != null)
+				throw Exception;
+
 			observation();
 		}
 	}

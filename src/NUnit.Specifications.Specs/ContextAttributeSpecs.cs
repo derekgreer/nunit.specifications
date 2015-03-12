@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using NUnit.Framework;
 using NUnit.Specifications.Specs.TestHelpers;
-using Shouldly;
+using Should;
 
 namespace NUnit.Specifications.Specs
 {
@@ -10,9 +10,9 @@ namespace NUnit.Specifications.Specs
 		[Initializable]
 		public class when_a_specification_is_decorated_with_a_context_attribute : ContextSpecification
 		{
-			It should_initialize_the_attribute = () => ((bool) Context.IsInitialized).ShouldBe(true);
+			It should_initialize_the_attribute = () => ((bool) Context.IsInitialized).ShouldBeTrue();
 
-			It should_initialize_the_attribute_only_once = () => ((int) Context.InitializeCount).ShouldBe(1);
+			It should_initialize_the_attribute_only_once = () => ((int) Context.InitializeCount).ShouldEqual(1);
 		}
 	}
 
@@ -22,6 +22,6 @@ namespace NUnit.Specifications.Specs
 	{
 		Cleanup after = () => File.Delete("touch.txt");
 
-		It should_not_execute = () => File.Exists("touch.txt").ShouldBe(true);
+		It should_not_execute = () => File.Exists("touch.txt").ShouldBeTrue();
 	}
 }
