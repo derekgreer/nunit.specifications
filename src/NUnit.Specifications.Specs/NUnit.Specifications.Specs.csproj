@@ -49,9 +49,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CatchSpecs.cs" />
+    <Compile Include="ContextAttributeSpecs.cs" />
     <Compile Include="ContextSpecificationSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TDDNetSpecs.cs" />
+    <Compile Include="TestHelpers\InitializableAttribute.cs" />
+    <Compile Include="TestHelpers\CreateFileAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NUnit.Specifications\NUnit.Specifications.csproj">

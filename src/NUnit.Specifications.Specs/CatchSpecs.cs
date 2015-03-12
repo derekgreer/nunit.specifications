@@ -17,7 +17,7 @@ namespace NUnit.Specifications.Specs
 		}
 
 		[Component]
-		public class when__an_exception_is_not_thrown : ContextSpecification
+		public class when_an_exception_is_not_thrown : ContextSpecification
 		{
 			static Exception _exception;
 

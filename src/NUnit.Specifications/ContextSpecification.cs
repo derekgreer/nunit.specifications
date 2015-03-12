@@ -2,16 +2,24 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Dynamic;
 using System.Linq;
 using System.Reflection;
 using NUnit.Framework;
 
 namespace NUnit.Specifications
 {
+	public abstract class ContextAttribute : Attribute
+	{
+		public abstract void Initialize(dynamic context);
+	}
+
 	[DebuggerStepThrough]
 	[TestFixture]
 	public abstract class ContextSpecification
 	{
+		public static dynamic Context { get; protected set; }
+
 		public delegate void Because();
 
 		public delegate void Cleanup();
@@ -23,10 +31,25 @@ namespace NUnit.Specifications
 		[TestFixtureSetUp]
 		public void TestFixtureSetUp()
 		{
+			InitializeContext();
 			InvokeEstablish();
 			InvokeBecause();
 		}
-		
+
+		void InitializeContext()
+		{
+			Context = new ExpandoObject();
+			Type t = GetType();
+
+			IEnumerable<ContextAttribute> contexts =
+				t.GetCustomAttributes(typeof (ContextAttribute), true).Cast<ContextAttribute>();
+
+			foreach (ContextAttribute context in contexts)
+			{
+				context.Initialize(Context);
+			}
+		}
+
 		[TestFixtureTearDown]
 		public void TestFixtureTearDown()
 		{
@@ -104,8 +127,10 @@ namespace NUnit.Specifications
 			IEnumerable<FieldInfo> itFieldInfos =
 				t.GetFields(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.FlattenHierarchy)
 					.Where(x => x.FieldType.Name.Equals("It"));
-			
-			return itFieldInfos.Select(fieldInfo => new TestCaseData(fieldInfo.GetValue(this)).SetName(fieldInfo.Name).SetCategory(categoryName));
+
+			return
+				itFieldInfos.Select(
+					fieldInfo => new TestCaseData(fieldInfo.GetValue(this)).SetName(fieldInfo.Name).SetCategory(categoryName));
 		}
 
 		[Test, TestCaseSource("GetObservations")]
