@@ -7,7 +7,7 @@ namespace NUnit.Specifications
 		Inherited = true)]
 	public sealed class ComponentAttribute : CategoryAttribute
 	{
-		public ComponentAttribute() : base("component")
+		public ComponentAttribute() : base("Component")
 		{
 		}
 	}

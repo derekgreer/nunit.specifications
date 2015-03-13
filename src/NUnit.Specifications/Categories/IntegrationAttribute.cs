@@ -7,7 +7,7 @@ namespace NUnit.Specifications
 		Inherited = true)]
 	public sealed class IntegrationAttribute : CategoryAttribute
 	{
-		public IntegrationAttribute() : base("integration")
+		public IntegrationAttribute() : base("Integration")
 		{
 		}
 	}

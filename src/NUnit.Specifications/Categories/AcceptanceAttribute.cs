@@ -8,7 +8,7 @@ namespace NUnit.Specifications
 	public sealed class AcceptanceAttribute : CategoryAttribute
 	{
 		public AcceptanceAttribute()
-			: base("acceptance")
+			: base("Acceptance")
 		{
 		}
 	}

@@ -8,7 +8,7 @@ namespace NUnit.Specifications
 	public sealed class UnitAttribute : CategoryAttribute
 	{
 		public UnitAttribute()
-			: base("unit")
+			: base("Unit")
 		{
 		}
 	}

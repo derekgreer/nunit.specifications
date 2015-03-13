@@ -7,7 +7,7 @@ namespace NUnit.Specifications
 		Inherited = true)]
 	public sealed class SubcutaneousAttribute : CategoryAttribute
 	{
-		public SubcutaneousAttribute() : base("subcutaneous")
+		public SubcutaneousAttribute() : base("Subcutaneous")
 		{
 		}
 	}
