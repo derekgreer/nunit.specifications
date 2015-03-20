@@ -1,7 +1,9 @@
 using System;
+using System.Diagnostics;
 
 namespace NUnit.Specifications
 {
+	[DebuggerStepThrough]
 	public static class Catch
 	{
 		public static Exception Exception(Action action)
