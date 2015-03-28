@@ -1,6 +1,9 @@
-﻿using System.IO;
+﻿using System;
+using System.Dynamic;
+using System.IO;
+using System.Linq.Expressions;
 using NUnit.Framework;
-using NUnit.Specifications.Specs.TestHelpers;
+using NUnit.Specifications.Specs.Attributes;
 using Should;
 
 namespace NUnit.Specifications.Specs

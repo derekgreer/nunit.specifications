@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace NUnit.Specifications.Specs.TestHelpers
+namespace NUnit.Specifications.Specs.Attributes
 {
 	public class CreateFileAttribute : ContextAttribute
 	{
