@@ -1,4 +1,5 @@
 build/
+dist/
 reports/
 [Bb]in/
 [Oo]bj/
@@ -19,3 +20,4 @@ _UpgradeReport_Files/
 *.log
 *.log.*
 TestResult.xml
+node_modules
