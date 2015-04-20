@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8EF9A45A-E467-40A9-BCA4-FD9F14BA6A1B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NUnit.Specifications</RootNamespace>
+    <AssemblyName>NUnit.Specifications</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NET20</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NET20</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\CommonAssemblyInfo.cs">
+      <Link>CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\NUnit.Specifications\Action.cs">
+      <Link>Action.cs</Link>
+    </Compile>
+    <Compile Include="..\NUnit.Specifications\Catch.cs">
+      <Link>Catch.cs</Link>
+    </Compile>
+    <Compile Include="..\NUnit.Specifications\Categories\AcceptanceAttribute.cs">
+      <Link>Categories\AcceptanceAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\NUnit.Specifications\Categories\ComponentAttribute.cs">
+      <Link>Categories\ComponentAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\NUnit.Specifications\Categories\IntegrationAttribute.cs">
+      <Link>Categories\IntegrationAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\NUnit.Specifications\Categories\SubcutaneousAttribute.cs">
+      <Link>Categories\SubcutaneousAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\NUnit.Specifications\Categories\SubjectAttribute.cs">
+      <Link>Categories\SubjectAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\NUnit.Specifications\Categories\UnitAttribute.cs">
+      <Link>Categories\UnitAttribute.cs</Link>
+    </Compile>
+    <Compile Include="ContextSpecification.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

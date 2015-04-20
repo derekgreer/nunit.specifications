@@ -26,7 +26,7 @@ namespace NUnit.Specifications
       return GetObservations().GetEnumerator();
     }
 
-    [TestFixtureSetUp]
+    [OneTimeSetUp]
     public void TestFixtureSetUp()
     {
       InitializeContext();
@@ -39,7 +39,7 @@ namespace NUnit.Specifications
       var t = GetType();
     }
 
-    [TestFixtureTearDown]
+    [OneTimeTearDown]
     public void TestFixtureTearDown()
     {
       InvokeCleanup();
@@ -160,8 +160,8 @@ namespace NUnit.Specifications
       }
     }
 
-    [Test, TestCaseSource("GetObservations")]
-    public void Observation(It observation)
+    [Test, SpecificationSource("GetObservations")]
+    public void Observations(It observation)
     {
       if (Exception != null)
         throw Exception;
