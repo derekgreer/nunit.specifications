@@ -76,7 +76,7 @@ gulp.task("specs", ["download-nunit-console", "build"], function(cb) {
   glob(paths.sourcePath + "/**/bin/Release/*.Specs.dll", function(globError, files) {
     if (globError) return cb(globError);
 
-    return spawn(cmd, files, { stdio: "inherit" }).on("exit", cb);
+    return spawn(cmd, ["-labels=All"].concat(files), { stdio: "inherit" }).on("exit", cb);
   });
 });
 
