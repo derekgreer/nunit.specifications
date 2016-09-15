@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
 using NUnit.Framework;
+#if NET_STANDARD
+    using System.Linq;
+#endif
 
 namespace NUnit.Specifications
 {
@@ -53,7 +56,12 @@ namespace NUnit.Specifications
       do
       {
         types.Push(type);
+#if NET_STANDARD
+        type = type.GetTypeInfo().BaseType;
+#else
         type = type.BaseType;
+#endif
+
       } while (type != typeof (ContextSpecification));
 
       foreach (var t in types)
@@ -126,19 +134,36 @@ namespace NUnit.Specifications
       var categoryName = "Uncategorized";
       var description = string.Empty;
 
-      var categoryAttributes = t.GetCustomAttributes(typeof (CategoryAttribute), true);
-      var subjectAttributes = t.GetCustomAttributes(typeof (SubjectAttribute), true);
+#if NET_STANDARD
+      var categoryAttributes = t.GetTypeInfo().CustomAttributes;
+      var subjectAttributes = t.GetTypeInfo().CustomAttributes;
+#else
+      var categoryAttributes = t.GetCustomAttributes(typeof(CategoryAttribute), true);
+      var subjectAttributes = t.GetCustomAttributes(typeof(SubjectAttribute), true);
+#endif
 
+#if NET_STANDARD
+      if (categoryAttributes.Any())
+      {
+        categoryName = categoryAttributes.First().ConstructorArguments[0].Value.ToString();
+#else
       if (categoryAttributes.Length > 0)
       {
-        var categoryAttribute = (CategoryAttribute) categoryAttributes[0];
+        var categoryAttribute = (CategoryAttribute)categoryAttributes[0];
         categoryName = categoryAttribute.Name;
+#endif
       }
 
-      if (subjectAttributes.Length > 0)
+#if NET_STANDARD
+      if (subjectAttributes.Any())
       {
-        var subjectAttribute = (SubjectAttribute) subjectAttributes[0];
+        description = subjectAttributes.First().ConstructorArguments[0].Value.ToString();
+#else
+            if (subjectAttributes.Length > 0)
+      {
+        var subjectAttribute = (SubjectAttribute)subjectAttributes[0];
         description = subjectAttribute.Subject;
+#endif
       }
 
       var fieldInfos = t.GetFields(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.FlattenHierarchy);
