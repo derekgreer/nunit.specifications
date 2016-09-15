@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{770E6975-4B91-45E9-A971-3C543CCFE22F}"
 	ProjectSection(SolutionItems) = preProject
@@ -43,6 +43,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NUnit3", "NUnit3", "{E22E168E-0FA1-4C02-B537-CC331D34B63C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NUnit2", "NUnit2", "{4092FB6D-3BEC-4042-80AA-5A5DC6972884}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "NUnit.Specifications.NUnit3.coreCLR", "NUnit.Specifications.NUnit3.coreCLR\NUnit.Specifications.NUnit3.coreCLR.xproj", "{B258B09F-F581-4BBF-B076-E0E155714B7B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -86,6 +88,10 @@ Global
 		{83DF23C7-372F-4D9A-883C-64F9F48C703C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83DF23C7-372F-4D9A-883C-64F9F48C703C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83DF23C7-372F-4D9A-883C-64F9F48C703C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B258B09F-F581-4BBF-B076-E0E155714B7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B258B09F-F581-4BBF-B076-E0E155714B7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B258B09F-F581-4BBF-B076-E0E155714B7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B258B09F-F581-4BBF-B076-E0E155714B7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -102,5 +108,6 @@ Global
 		{83DF23C7-372F-4D9A-883C-64F9F48C703C} = {4092FB6D-3BEC-4042-80AA-5A5DC6972884}
 		{E22E168E-0FA1-4C02-B537-CC331D34B63C} = {07CDA8B4-8F38-4B76-9960-E8854CBBC3EF}
 		{4092FB6D-3BEC-4042-80AA-5A5DC6972884} = {07CDA8B4-8F38-4B76-9960-E8854CBBC3EF}
+		{B258B09F-F581-4BBF-B076-E0E155714B7B} = {E22E168E-0FA1-4C02-B537-CC331D34B63C}
 	EndGlobalSection
 EndGlobal

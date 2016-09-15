@@ -2,7 +2,9 @@
   "name": "NUnit.Specifications",
   "version": "1.1.2",
   "description": "A context/specification library for use with the NUnit testing framework.",
-  "dependencies": {},
+  "dependencies": {
+    "gulp-install": "^0.6.0"
+  },
   "devDependencies": {
     "del": "^2.2.0",
     "fs": "0.0.2",
