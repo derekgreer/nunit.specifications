@@ -1,4 +1,5 @@
 @echo off
+set "PWD=%cd%"
 setlocal EnableDelayedExpansion
 WHERE yarn >nul 2>&1
 set YARN_AVAILABLE=%ERRORLEVEL%

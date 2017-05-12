@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnit.Specifications", "NUn
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnit.Specifications.Specs", "NUnit.Specifications.Specs\NUnit.Specifications.Specs.csproj", "{88AAB6AD-BAF5-474A-B753-7D0C05A3C9DA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnit.Specifications.Net452.Specs", "NUnit.Specifications.Net452.Specs\NUnit.Specifications.Net452.Specs.csproj", "{223C0044-4ACF-48AA-AFA9-680F146D630B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{88AAB6AD-BAF5-474A-B753-7D0C05A3C9DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88AAB6AD-BAF5-474A-B753-7D0C05A3C9DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88AAB6AD-BAF5-474A-B753-7D0C05A3C9DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{223C0044-4ACF-48AA-AFA9-680F146D630B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{223C0044-4ACF-48AA-AFA9-680F146D630B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{223C0044-4ACF-48AA-AFA9-680F146D630B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{223C0044-4ACF-48AA-AFA9-680F146D630B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,5 +38,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{742844E4-1672-4616-AFE8-2FA4B815C466} = {07CDA8B4-8F38-4B76-9960-E8854CBBC3EF}
 		{88AAB6AD-BAF5-474A-B753-7D0C05A3C9DA} = {D7D794A6-5E72-451F-9749-5F3E1662515C}
+		{223C0044-4ACF-48AA-AFA9-680F146D630B} = {D7D794A6-5E72-451F-9749-5F3E1662515C}
 	EndGlobalSection
 EndGlobal
