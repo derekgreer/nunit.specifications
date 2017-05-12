@@ -4,27 +4,28 @@ using System.Diagnostics;
 using Actionx = NUnit.Specifications.Action2;
 #else
 using Actionx = System.Action;
+
 #endif
 
 namespace NUnit.Specifications
 {
-  [DebuggerStepThrough]
-  public static class Catch
-  {
-    public static Exception Exception(Actionx action)
+    [DebuggerStepThrough]
+    public static class Catch
     {
-      Exception exception = null;
+        public static Exception Exception(Actionx action)
+        {
+            Exception exception = null;
 
-      try
-      {
-        action();
-      }
-      catch (Exception e)
-      {
-        exception = e;
-      }
+            try
+            {
+                action();
+            }
+            catch (Exception e)
+            {
+                exception = e;
+            }
 
-      return exception;
+            return exception;
+        }
     }
-  }
 }

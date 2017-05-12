@@ -1,34 +1,41 @@
 {
   "name": "NUnit.Specifications",
-  "version": "1.1.2",
-  "description": "A context/specification library for use with the NUnit testing framework.",
-  "dependencies": {},
-  "devDependencies": {
-    "del": "^2.2.0",
-    "fs": "0.0.2",
-    "gulp": "^3.9.1",
-    "gulp-load-plugins": "^1.2.0",
-    "gulp-msbuild": "^0.3.1",
-    "gulp-print": "^2.0.1",
-    "gulp-sequence": "^0.4.5",
-    "vinyl-source-stream": "^1.1.0",
-    "which": "^1.2.4"
-  },
+  "version": "2.0.0",
+  "configuration": "Release",
+  "description": "A context/specification library for use with the NUnit testing framework",
+  "dotnetPath": "\"c:/Program Files/dotnet/dotnet.exe\"",
+  "publishSource": "https://www.nuget.org/api/v2/package",
   "scripts": {
-    "test": "gulp specs"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/derekgreer/nunit.specifications.git"
+    "prebuild": "npm run clean",
+    "clean": "rimraf dist",
+    "build": "npm-run-all build:* tests package",
+    "build:restore": "cross-env globstar -- ${npm_package_dotnetPath} restore \"**/*.sln\" /p:Version=${npm_package_version}",
+    "build:build": "cross-env globstar -- ${npm_package_dotnetPath} build \"**/*.sln\" --configuration ${npm_package_configuration} /p:Version=${npm_package_version}",
+    "tests": "cross-env globstar -- ${npm_package_dotnetPath} test \"src/${npm_package_name}.Specs/*.csproj",
+    "package": "npm-run-all package:*",
+    "package:main": "cross-env globstar -- ${npm_package_dotnetPath} pack \"./src/**/${npm_package_name}.csproj\" -c ${npm_package_configuration} --no-build -o ../../dist --include-symbols /p:Version=${npm_package_version}",
+    "publish": "npm-run-all publish:*",
+    "publish:main": "cross-env globstar -- ${npm_package_dotnetPath} nuget push dist/${npm_package_name}.${npm_package_version}.nupkg --source ${npm_package_publishSource}"
   },
   "keywords": [
-    "NUnit",
-    "NUnit.Specifications"
+    "logging"
   ],
-  "author": "Derek B. Greer",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/derekgreer/nunit.specifications/issues"
-  },
-  "homepage": "https://github.com/derekgreer/nunit.specifications#readme"
+  "author": "Derek Greer",
+  "dependencies": {},
+  "devDependencies": {
+    "cpx": "^1.5.0",
+    "cross-env": "^4.0.0",
+    "cross-run": "^1.0.1",
+    "download-cli": "^1.0.1",
+    "extend": "^3.0.0",
+    "globstar": "^1.0.0",
+    "minimist": "^1.2.0",
+    "mkdirp": "^0.5.1",
+    "npm-run-all": "^4.0.2",
+    "path": "^0.12.7",
+    "request": "^2.81.0",
+    "rimraf": "^2.6.1",
+    "tmp": "^0.0.31",
+    "which": "^1.2.14"
+  }
 }

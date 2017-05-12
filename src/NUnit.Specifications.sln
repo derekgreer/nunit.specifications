@@ -1,48 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.4
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{770E6975-4B91-45E9-A971-3C543CCFE22F}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{187868CB-C8EB-490E-B999-8CEBDE453C1D}"
-	ProjectSection(SolutionItems) = preProject
-		..\gulpfile.js = ..\gulpfile.js
-		nuspec\NUnit.Specifications.NUnit3.nuspec = nuspec\NUnit.Specifications.NUnit3.nuspec
-		nuspec\NUnit.Specifications.nuspec = nuspec\NUnit.Specifications.nuspec
-		..\package.json = ..\package.json
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{07CDA8B4-8F38-4B76-9960-E8854CBBC3EF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Specifications", "Specifications", "{D7D794A6-5E72-451F-9749-5F3E1662515C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnit.Specifications.NUnit3", "NUnit.Specifications.NUnit3\NUnit.Specifications.NUnit3.csproj", "{742844E4-1672-4616-AFE8-2FA4B815C466}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnit.Specifications", "NUnit.Specifications\NUnit.Specifications.csproj", "{742844E4-1672-4616-AFE8-2FA4B815C466}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnit.Specifications.NUnit3.net20", "NUnit.Specifications.NUnit3.net20\NUnit.Specifications.NUnit3.net20.csproj", "{C2791B85-1F0D-4F29-9719-4C7F72C10693}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnit.Specifications.NUnit3.net45", "NUnit.Specifications.NUnit3.net45\NUnit.Specifications.NUnit3.net45.csproj", "{FF24DF0F-AF6D-49BD-A6A2-4D51B6EC5E3C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnit.Specifications.NUnit3.net40", "NUnit.Specifications.NUnit3.net40\NUnit.Specifications.NUnit3.net40.csproj", "{5377693B-6E03-45F1-AD69-471CD7F88DE7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnit.Specifications.NUnit3.Specs", "NUnit.Specifications.NUnit3.Specs\NUnit.Specifications.NUnit3.Specs.csproj", "{88AAB6AD-BAF5-474A-B753-7D0C05A3C9DA}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnit.Specifications", "NUnit.Specifications\NUnit.Specifications.csproj", "{DD8A6FB8-A4E2-4161-BDA0-EB2E69A3AC3E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnit.Specifications.net20", "NUnit.Specifications.net20\NUnit.Specifications.net20.csproj", "{8EF9A45A-E467-40A9-BCA4-FD9F14BA6A1B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnit.Specifications.net40", "NUnit.Specifications.net40\NUnit.Specifications.net40.csproj", "{BE3BFF90-05FE-40F0-93E5-DC372AAEFB67}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnit.Specifications.net45", "NUnit.Specifications.net45\NUnit.Specifications.net45.csproj", "{83DF23C7-372F-4D9A-883C-64F9F48C703C}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NUnit3", "NUnit3", "{E22E168E-0FA1-4C02-B537-CC331D34B63C}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NUnit2", "NUnit2", "{4092FB6D-3BEC-4042-80AA-5A5DC6972884}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnit.Specifications.Specs", "NUnit.Specifications.Specs\NUnit.Specifications.Specs.csproj", "{88AAB6AD-BAF5-474A-B753-7D0C05A3C9DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -54,53 +21,16 @@ Global
 		{742844E4-1672-4616-AFE8-2FA4B815C466}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{742844E4-1672-4616-AFE8-2FA4B815C466}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{742844E4-1672-4616-AFE8-2FA4B815C466}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C2791B85-1F0D-4F29-9719-4C7F72C10693}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C2791B85-1F0D-4F29-9719-4C7F72C10693}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C2791B85-1F0D-4F29-9719-4C7F72C10693}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C2791B85-1F0D-4F29-9719-4C7F72C10693}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FF24DF0F-AF6D-49BD-A6A2-4D51B6EC5E3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FF24DF0F-AF6D-49BD-A6A2-4D51B6EC5E3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FF24DF0F-AF6D-49BD-A6A2-4D51B6EC5E3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FF24DF0F-AF6D-49BD-A6A2-4D51B6EC5E3C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5377693B-6E03-45F1-AD69-471CD7F88DE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5377693B-6E03-45F1-AD69-471CD7F88DE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5377693B-6E03-45F1-AD69-471CD7F88DE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5377693B-6E03-45F1-AD69-471CD7F88DE7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{88AAB6AD-BAF5-474A-B753-7D0C05A3C9DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{88AAB6AD-BAF5-474A-B753-7D0C05A3C9DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88AAB6AD-BAF5-474A-B753-7D0C05A3C9DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88AAB6AD-BAF5-474A-B753-7D0C05A3C9DA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DD8A6FB8-A4E2-4161-BDA0-EB2E69A3AC3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DD8A6FB8-A4E2-4161-BDA0-EB2E69A3AC3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DD8A6FB8-A4E2-4161-BDA0-EB2E69A3AC3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DD8A6FB8-A4E2-4161-BDA0-EB2E69A3AC3E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8EF9A45A-E467-40A9-BCA4-FD9F14BA6A1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8EF9A45A-E467-40A9-BCA4-FD9F14BA6A1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8EF9A45A-E467-40A9-BCA4-FD9F14BA6A1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8EF9A45A-E467-40A9-BCA4-FD9F14BA6A1B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BE3BFF90-05FE-40F0-93E5-DC372AAEFB67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BE3BFF90-05FE-40F0-93E5-DC372AAEFB67}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BE3BFF90-05FE-40F0-93E5-DC372AAEFB67}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BE3BFF90-05FE-40F0-93E5-DC372AAEFB67}.Release|Any CPU.Build.0 = Release|Any CPU
-		{83DF23C7-372F-4D9A-883C-64F9F48C703C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{83DF23C7-372F-4D9A-883C-64F9F48C703C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{83DF23C7-372F-4D9A-883C-64F9F48C703C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{83DF23C7-372F-4D9A-883C-64F9F48C703C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{742844E4-1672-4616-AFE8-2FA4B815C466} = {E22E168E-0FA1-4C02-B537-CC331D34B63C}
-		{C2791B85-1F0D-4F29-9719-4C7F72C10693} = {E22E168E-0FA1-4C02-B537-CC331D34B63C}
-		{FF24DF0F-AF6D-49BD-A6A2-4D51B6EC5E3C} = {E22E168E-0FA1-4C02-B537-CC331D34B63C}
-		{5377693B-6E03-45F1-AD69-471CD7F88DE7} = {E22E168E-0FA1-4C02-B537-CC331D34B63C}
+		{742844E4-1672-4616-AFE8-2FA4B815C466} = {07CDA8B4-8F38-4B76-9960-E8854CBBC3EF}
 		{88AAB6AD-BAF5-474A-B753-7D0C05A3C9DA} = {D7D794A6-5E72-451F-9749-5F3E1662515C}
-		{DD8A6FB8-A4E2-4161-BDA0-EB2E69A3AC3E} = {4092FB6D-3BEC-4042-80AA-5A5DC6972884}
-		{8EF9A45A-E467-40A9-BCA4-FD9F14BA6A1B} = {4092FB6D-3BEC-4042-80AA-5A5DC6972884}
-		{BE3BFF90-05FE-40F0-93E5-DC372AAEFB67} = {4092FB6D-3BEC-4042-80AA-5A5DC6972884}
-		{83DF23C7-372F-4D9A-883C-64F9F48C703C} = {4092FB6D-3BEC-4042-80AA-5A5DC6972884}
-		{E22E168E-0FA1-4C02-B537-CC331D34B63C} = {07CDA8B4-8F38-4B76-9960-E8854CBBC3EF}
-		{4092FB6D-3BEC-4042-80AA-5A5DC6972884} = {07CDA8B4-8F38-4B76-9960-E8854CBBC3EF}
 	EndGlobalSection
 EndGlobal
