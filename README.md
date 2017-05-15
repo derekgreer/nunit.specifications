@@ -32,3 +32,4 @@ public class OrderSpecs
 }
 ```
 
+See the [NUnit.Specifications Wiki](https://github.com/derekgreer/nunit.specifications/wiki) for more information and examples.
