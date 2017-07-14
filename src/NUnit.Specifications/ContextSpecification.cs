@@ -76,6 +76,9 @@ namespace NUnit.Specifications
 
         void InvokeBecause()
         {
+            if (Exception != null)
+                return;
+
             var t = GetType();
 
             var fieldInfos = t.GetFields(BindingFlags.Instance | BindingFlags.NonPublic |
