@@ -1,6 +1,6 @@
 {
   "name": "NUnit.Specifications",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "configuration": "Release",
   "description": "A context/specification library for use with the NUnit testing framework",
   "dotnetPath": "\"c:/Program Files/dotnet/dotnet.exe\"",
