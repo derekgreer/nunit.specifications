@@ -4,7 +4,7 @@ NUnit.Specifications is a context/specification library for use with the NUnit t
 
 # Quickstart
 
-The following is an example NUnit test written using the ContextSpecification based class from NUnit.Specifications:
+The following is an example NUnit test written using the ContextSpecification base class from NUnit.Specifications:
 
 ```C#
 using NUnit.Framework;
