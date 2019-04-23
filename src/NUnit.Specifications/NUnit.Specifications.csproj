@@ -8,7 +8,7 @@
     <PackageTags>bdd tdd testing</PackageTags>
     <PackageProjectUrl>https://github.com/derekgreer/nunit.specifications/</PackageProjectUrl>
     <PackageIconUrl>https://github.com/derekgreer/nunit.specifications/raw/master/images/ico.png</PackageIconUrl>
-    <PackageLicenseUrl>https://github.com/derekgreer/nunit.specifications/raw/master/license.txt</PackageLicenseUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/derekgreer/nunit.specifications/</RepositoryUrl>

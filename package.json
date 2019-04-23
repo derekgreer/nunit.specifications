@@ -8,16 +8,21 @@
   "scripts": {
     "prebuild": "npm run clean",
     "clean": "rimraf dist",
-    "build": "npm-run-all build:* tests package",
-    "build:restore": "cross-env globstar -- ${npm_package_dotnetPath} restore \"**/*.sln\" /p:Version=${npm_package_version}",
-    "build:build": "cross-env globstar -- ${npm_package_dotnetPath} build \"**/*.sln\" --configuration ${npm_package_configuration} /p:Version=${npm_package_version}",
+    "build": "npm-run-all build:restore build:build tests package",
+    "build:restore": "cross-env-shell globstar -- ${npm_package_dotnetPath} restore \"**/*.sln\" /p:Version=${npm_package_version}",
+    "build:build": "cross-env-shell globstar -- ${npm_package_dotnetPath} build \"**/*.sln\" --configuration ${npm_package_configuration} /p:Version=${npm_package_version}",
+    "build:pre-release": "npm-run-all build:pre-release:restore build:pre-release:build tests package:pre-release",
+    "build:pre-release:restore": "cross-env-shell globstar -- ${npm_package_dotnetPath} restore \"**/*.sln\" /p:Version=${PreReleaseVersion}",
+    "build:pre-release:build": "cross-env-shell globstar -- ${npm_package_dotnetPath} build \"**/*.sln\" --configuration ${npm_package_configuration} /p:Version=${PreReleaseVersion}",
     "tests": "npm-run-all tests:*",
-    "tests:core": "cross-env globstar -- ${npm_package_dotnetPath} test --configuration ${npm_package_configuration} \"src/${npm_package_name}.Specs/*.csproj",
-    "tests:net452": "cross-env globstar -- ${PWD}/src/packages/NUnit.ConsoleRunner.3.6.1/tools/nunit3-console.exe \"src/${npm_package_name}.Net452.Specs/bin/${npm_package_configuration}/*.Specs.dll",
-    "package": "npm-run-all package:*",
-    "package:main": "cross-env globstar -- ${npm_package_dotnetPath} pack \"./src/**/${npm_package_name}.csproj\" -c ${npm_package_configuration} --no-build -o ../../dist --include-symbols /p:Version=${npm_package_version}",
+    "tests:core": "cross-env-shell globstar -- ${npm_package_dotnetPath} test --configuration ${npm_package_configuration} \"src/${npm_package_name}.Specs/*.csproj",
+    "tests:net452": "cross-env-shell globstar -- ${PWD}/src/packages/NUnit.ConsoleRunner.3.10.0/tools/nunit3-console.exe \"src/${npm_package_name}.Net452.Specs/bin/${npm_package_configuration}/*.Specs.dll",
+    "package": "npm-run-all clean package:release:*",
+    "package:release:main": "cross-env-shell globstar -- ${npm_package_dotnetPath} pack \"./src/**/${npm_package_name}.csproj\" -c ${npm_package_configuration} --no-build -o ../../dist --include-symbols /p:Version=${npm_package_version}",
+    "package:pre-release": "npm-run-all clean package:pre-release:*",
+    "package:pre-release:main": "cross-env-shell globstar -- ${npm_package_dotnetPath} pack --version-suffix ${VersionSuffix} \"./src/**/${npm_package_name}.csproj\" -c ${npm_package_configuration} --no-build -o ../../dist --include-symbols -p:VersionPrefix=${PreReleaseVersion}",
     "publish": "npm-run-all publish:*",
-    "publish:main": "cross-env globstar -- ${npm_package_dotnetPath} nuget push dist/${npm_package_name}.${npm_package_version}.nupkg --source ${npm_package_publishSource}"
+    "publish:main": "cross-env-shell globstar -- ${npm_package_dotnetPath} nuget push \"dist/${npm_package_name}.*.nupkg\" --source ${npm_package_publishSource}"
   },
   "keywords": [
     "logging"
@@ -26,7 +31,7 @@
   "dependencies": {},
   "devDependencies": {
     "cpx": "^1.5.0",
-    "cross-env": "^4.0.0",
+    "cross-env": "^5.0.2",
     "cross-run": "^1.0.1",
     "download-cli": "^1.0.1",
     "extend": "^3.0.0",
@@ -37,6 +42,7 @@
     "path": "^0.12.7",
     "request": "^2.81.0",
     "rimraf": "^2.6.1",
+    "standard-version": "^5.0.2",
     "tmp": "^0.0.31",
     "which": "^1.2.14"
   }

@@ -8,6 +8,7 @@ TestResults/
 PrecompiledWeb/
 build/CommonAssemblyInfo.cs
 src/packages/
+**/.vs
 artifacts
 lib
 *.gpState
