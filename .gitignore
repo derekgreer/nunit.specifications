@@ -24,3 +24,4 @@ TestResult.xml
 node_modules
 yarn-error.log
 .yarnclean
+/src/.vs/NUnit.Specifications/v16

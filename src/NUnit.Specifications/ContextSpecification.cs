@@ -160,7 +160,6 @@ namespace NUnit.Specifications
             }
         }
 
-        [Test]
         [SpecificationSource("GetObservations")]
         public void Observations(It observation)
         {
