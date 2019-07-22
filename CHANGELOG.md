@@ -1,6 +1,16 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [2.0.2](https://github.com/derekgreer/nunit.specifications/compare/v2.0.1...v2.0.2) (2019-07-22)
+
+
+### Bug Fixes
+
+* Correct name and full name of test suites ([2671349](https://github.com/derekgreer/nunit.specifications/commit/2671349))
+* Remove [Test] attribute from SpecificationSource method ([2bc6a25](https://github.com/derekgreer/nunit.specifications/commit/2bc6a25))
+
+
 
 <a name="2.0.1"></a>
 ## [2.0.1](https://github.com/derekgreer/nunit.specifications/compare/v2.0.0...v2.0.1) (2017-07-15)
