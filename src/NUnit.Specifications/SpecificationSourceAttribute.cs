@@ -24,8 +24,9 @@ namespace NUnit.Specifications
         public IEnumerable<TestMethod> BuildFrom(IMethodInfo method, Test suite)
         {
             var classNameTokens = suite.FullName.Split('.', '+');
-            suite.FullName = classNameTokens[classNameTokens.Length - 1].Replace("_", " ");
-            suite.Name = suite.FullName;
+            string lastSegment = classNameTokens[classNameTokens.Length - 1];
+            suite.Name = lastSegment.Replace("_", " ");
+            suite.FullName = suite.FullName.Substring(0, suite.FullName.Length - lastSegment.Length - 1) + "." + suite.Name;
 
             foreach (var testCaseParameters in GetTestCasesFor(method))
                 yield return _builder.BuildTestMethod(method, suite, testCaseParameters);

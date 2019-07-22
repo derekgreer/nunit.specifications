@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="Moq" Version="4.10.1" />
-    <PackageReference Include="NUnit" Version="3.11.0" />
+    <PackageReference Include="NUnit" Version="3.12.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.0.1" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.0.0-ci-00459-pr-313" />
   </ItemGroup>
