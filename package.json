@@ -42,7 +42,7 @@
     "path": "^0.12.7",
     "request": "^2.81.0",
     "rimraf": "^2.6.1",
-    "standard-version": "^5.0.2",
+    "standard-version": "^8.0.1",
     "tmp": "^0.0.31",
     "which": "^1.2.14"
   }
